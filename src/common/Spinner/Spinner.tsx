@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Spinner = ({ size = 'medium', color = '#000000' }) => {
+const Spinner = ({ size = 'medium', color = '#00c951' }) => {
   const sizeClasses =
     size === 'small'
       ? 'w-5 h-5 border-2'

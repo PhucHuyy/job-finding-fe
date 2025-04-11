@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Spinner from './Spinner';
+import { useLocation } from 'react-router-dom';
 
 interface LoadingWrapperProps {
   children: React.ReactNode;
@@ -11,11 +12,16 @@ const LoadingWrapper: React.FC<LoadingWrapperProps> = ({
   delay = 2000,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), delay);
+    setIsLoading(true); // Reset loading khi route thay đổi
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, delay);
+
     return () => clearTimeout(timer);
-  }, [delay]);
+  }, [delay, location.pathname]);
 
   return isLoading ? <Spinner /> : <>{children}</>;
 };
