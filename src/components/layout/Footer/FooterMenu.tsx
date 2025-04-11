@@ -7,10 +7,10 @@ export default function FooterMenu() {
     <div className="py-6 border-b border-gray-700">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:justify-between items-center">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 max-w-[140px]">
             <img src={logoWhite} alt="Footer Logo" className="w-32" />
           </div>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-6 text-sm font-semibold text-gray-300">
             {footerMenuItems.map((item) => (
               <a
                 key={item.label}
