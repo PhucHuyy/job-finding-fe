@@ -1,35 +1,53 @@
-import { MenuItem } from 'primereact/menuitem';
-
 // headerData.ts
-export const items: MenuItem[] = [
+
+export interface SubMenuItem {
+  label: string;
+  href?: string;
+}
+
+export interface MegaMenuItem {
+  label: string;
+  dropdown?: {
+    sections: {
+      title: string;
+      items: SubMenuItem[];
+    }[];
+  };
+  href?: string;
+}
+
+export const menuItems: MegaMenuItem[] = [
   {
     label: 'Brows',
-    items: [
-      [
+    dropdown: {
+      sections: [
         {
-          label: 'Main Page',
-          items: [{ label: 'Home Page 1' }, { label: 'Home Page 2' }],
+          title: 'Main Page',
+          items: [
+            { label: 'Home Page 1', href: '*' },
+            { label: 'Home Page 2', href: '#' },
+          ],
+        },
+        {
+          title: 'For Candidates',
+          items: [
+            { label: 'Candidate 1', href: '#' },
+            { label: 'Candidate 2', href: '#' },
+          ],
         },
       ],
-      [
-        {
-          label: 'For Candidates',
-          items: [{ label: 'Candidate 1' }, { label: 'Candidate 2' }],
-        },
-      ],
-    ],
+    },
   },
   {
     label: 'Blog',
-    icon: 'pi pi-book',
+    href: '#',
   },
-
   {
     label: 'Sign up',
-    icon: 'pi pi-user',
+    href: '#',
   },
   {
     label: 'Pricing',
-    icon: 'pi pi-dollar',
+    href: '#',
   },
 ];

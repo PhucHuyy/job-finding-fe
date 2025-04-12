@@ -1,7 +1,7 @@
 export const footerMenuItems = [
   { label: 'HOME', path: '' },
   { label: 'BLOG', path: '' },
-  { label: '404', path: '' },
+  { label: '404', path: '*' },
   { label: 'FAQ', path: '' },
   { label: 'CONTACT US', path: '' },
 ];
