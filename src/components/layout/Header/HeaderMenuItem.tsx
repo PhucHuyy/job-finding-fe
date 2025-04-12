@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { menuItems } from '../../../data/headerData';
 import { Link } from 'react-router-dom';
 import DropdownMenu from './DropdownMenu';
