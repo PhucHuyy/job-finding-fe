@@ -1,30 +1,18 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import LoadingWrapper from './common/Spinner/LoadingWrapper';
-import Footer from './components/layout/Footer/Footer';
+import React from 'react';
+import HeaderTest from './pages/HeaderTest';
+import Error404Test from './pages/Error404Test';
+import LoginTest from './pages/LoginTest';
 import Header from './components/layout/Header/Header';
-import './custom-theme.css';
+import Footer from './components/layout/Footer/Footer';
+import FooterTest from './pages/FooterTest';
 
-import { PrimeReactProvider } from 'primereact/api';
-import 'primereact/resources/themes/lara-light-cyan/theme.css';
-import { publicRoutes } from './routes/publicRoutes';
-function App() {
+export default function App() {
   return (
     <>
-      <PrimeReactProvider>
-        <LoadingWrapper>
-          <Header />
-          <Routes>
-            {publicRoutes.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Routes>
-
-          <Footer />
-        </LoadingWrapper>
-      </PrimeReactProvider>
+      {/* <Header /> */}
+      {/* <Error404Test /> */}
+      <FooterTest />
+      {/* <Footer /> */}
     </>
   );
 }
-
-export default App;
